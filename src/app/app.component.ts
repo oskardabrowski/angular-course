@@ -1,24 +1,44 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  intervalSub: NodeJS.Timer | undefined;
+export class AppComponent {
+  title = 'Hello world!';
 
-  ngOnInit(): void {
-    this.intervalSub = setInterval(() => {
-      console.log('Hello from ngOnInit');
-    }, 1000)
-  }
-
-  ngOnDestroy(): void {
-    if(this.intervalSub) {
-      clearInterval(this.intervalSub)
+  getMin(a: number,b: number) {
+    if(a < b) {
+      return a;
     }
-  }
 
-  title = 'angular-tutorial';
+    return b;
+  }
 }
+
+// ! Hooki
+// import { Component, OnInit, OnDestroy } from '@angular/core';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css']
+// })
+// export class AppComponent implements OnInit, OnDestroy {
+//   intervalSub: NodeJS.Timer | undefined;
+
+//   ngOnInit(): void {
+//     this.intervalSub = setInterval(() => {
+//       console.log('Hello from ngOnInit');
+//     }, 1000)
+//   }
+
+//   ngOnDestroy(): void {
+//     if(this.intervalSub) {
+//       clearInterval(this.intervalSub)
+//     }
+//   }
+
+//   title = 'angular-tutorial';
+// }
