@@ -11,6 +11,12 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './hightlight.directive';
+import { LogService } from './log.service';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
+import { ChildAComponent } from './child-a/child-a.component';
+import { ChildBComponent } from './child-b/child-b.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +26,18 @@ import { HighlightDirective } from './hightlight.directive';
     GreetingsPipePipe,
     ItemDetailsComponent,
     AppSizerComponent,
-    HighlightDirective
+    HighlightDirective,
+    FirstComponent,
+    SecondComponent,
+    ChildAComponent,
+    ChildBComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,16 +1,99 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Pet } from './pet.model';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <p [appHighlight]="'red'">Test</p>
-  `
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
+  species = ['fish', 'cat', 'dog'];
+  model = new Pet(1, 'Goldie', this.species[0]);
+  submited = false;
+
+  onSubmit() {
+    this.submited = true;
+  }
+
   ngOnInit(): void {
 
   }
 }
+// import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+// import { LogService } from './log.service';
+
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//   <h1>Home</h1>
+//   <nav>
+//     <ul>
+//       <li><a routerLink="/first-component/1">First</a></li>
+//       <li><a routerLink="/second-component">Second</a></li>
+//     </ul>
+//   </nav>
+//   <router-outlet>
+//   `
+// })
+// export class AppComponent implements OnInit {
+
+//   ngOnInit(): void {
+
+//   }
+// }
+// import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+// import { LogService } from './log.service';
+
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//   <h1>Hello world!</h1>
+//   `
+// })
+// export class AppComponent implements OnInit {
+//   constructor(
+//     private logService: LogService,
+//     private renderer: Renderer2,
+//     private host: ElementRef
+//   ) {}
+
+//   ngOnInit(): void {
+//     this.logService.logMessage('Done');
+//     this.renderer.setStyle(this.host.nativeElement, 'color', 'red')
+//   }
+// }
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//   <div [ngSwitch]="item.name">
+//     <div *ngSwitchCase="'Bob'">Bob</div>
+//     <div *ngSwitchCase="'John'">John</div>
+//     <div *ngSwitchCase="'Monika'">Monika</div>
+//     <div *ngSwitchDefault>Nobody</div>
+//   </div>
+//   `
+// })
+// export class AppComponent implements OnInit {
+
+//   item = {name: 'Monika'}
+//   ngOnInit(): void {
+
+//   }
+// }
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//   <p [appHighlight]="'red'">Test</p>
+//   `
+// })
+// export class AppComponent implements OnInit {
+//   ngOnInit(): void {
+
+//   }
+// }
 // import { Component, OnInit } from '@angular/core';
 
 // @Component({

@@ -1,4 +1,15 @@
-
+<form>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+    </div>
+    <div>
+        <label for="specie">Specie</label>
+        <select id="specie" required>
+            <option *ngFor="let specie of species" [value]="specie">{{ specie }}</option>
+        </select>
+    </div>
+</form>
 
 
 
