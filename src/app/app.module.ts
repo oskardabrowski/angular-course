@@ -9,13 +9,14 @@ import { ChildComponent } from './child/child.component';
 import { GreetingsPipePipe } from './greetings-pipe.pipe';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightDirective } from './hightlight.directive';
 import { LogService } from './log.service';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { ChildBComponent } from './child-b/child-b.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [LogService],
   bootstrap: [AppComponent]

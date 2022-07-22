@@ -1,23 +1,83 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pet } from './pet.model';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  species = ['fish', 'cat', 'dog'];
-  model = new Pet(1, 'Goldie', this.species[0]);
-  submited = false;
-
-  onSubmit() {
-    this.submited = true;
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-
+    this.dataService.getData().subscribe((res) => {
+      console.log(res)
+    })
   }
 }
+
+// import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+// import { FormControl, FormGroup, Validators } from '@angular/forms';
+// import { Pet } from './pet.model';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html'
+// })
+// export class AppComponent {
+//   nameInput = '';
+
+//   validationForm = new FormGroup({
+//     name: new FormControl(this.nameInput, [
+//       Validators.required,
+//       Validators.minLength(4),
+//     ])
+//   });
+
+//   get name() {
+//     return this.validationForm.get('name');
+//   }
+// }
+
+// import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+// import { FormControl, FormGroup } from '@angular/forms';
+// import { Pet } from './pet.model';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html'
+// })
+// export class AppComponent {
+//   profileForm = new FormGroup({
+//     firstName: new FormControl(''),
+//     lastName: new FormControl(''),
+//   });
+
+//   onSubmit() {
+//     console.log(this.profileForm.value);
+//   }
+// }
+// import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+// import { Pet } from './pet.model';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html'
+// })
+// export class AppComponent implements OnInit {
+//   species = ['fish', 'cat', 'dog'];
+//   model = new Pet(1, 'Goldie', this.species[0]);
+//   submited = false;
+
+//   onSubmit() {
+//     this.submited = true;
+//   }
+
+//   ngOnInit(): void {
+
+//   }
+// }
 // import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 // import { LogService } from './log.service';
 
